@@ -3,3 +3,163 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+
+.neon-button {
+  position: relative;
+  padding: 8px 20px;
+  border: 1px solid #fff;
+  /* Basic white border */
+  background-color: transparent;
+  /* Transparent background */
+  color: #fff;
+  /* White text */
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.neon-button::before,
+.neon-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  transition: transform 0.5s ease;
+}
+
+.neon-button::before {
+  border-color: #FF0000 #00FF00;
+  /* Red and green segments */
+  z-index: -2;
+}
+
+.neon-button::after {
+  border-color: #0000FF #FF00FF;
+  /* Blue and pink segments */
+  z-index: -1;
+}
+
+.neon-button:hover::before,
+.neon-button:hover::after {
+  transform: rotate(180deg);
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.full-width-centered-image {
+  display: block;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* .bg-home {
+  @apply bg-cover bg-center bg-no-repeat;
+  background-image: url("/src/assets/bg-home.jpg");
+} */
+
+
+.loader {
+  width: 40px;
+  aspect-ratio: 1;
+  --c: linear-gradient(#000 0 0);
+  --m: radial-gradient(farthest-side, #000 92%, #0000);
+  background:
+    var(--m) center /12px 12px,
+    var(--c) left 50% top -20px/8px 16px,
+    var(--c) left 50% bottom -20px/8px 16px,
+    var(--c) top 50% left -20px/16px 8px,
+    var(--c) top 50% right -20px/16px 8px;
+  background-repeat: no-repeat;
+  animation:
+    l18-1 1.5s infinite,
+    l18-2 1.5s infinite;
+}
+
+@keyframes l18-1 {
+
+  30%,
+  70% {
+    background-position:
+      center,
+      left 50% top calc(50% - 8px),
+      left 50% bottom calc(50% - 8px),
+      top 50% left calc(50% - 8px),
+      top 50% right calc(50% - 8px)
+  }
+}
+
+@keyframes l18-2 {
+
+  0%,
+  40% {
+    transform: rotate(0)
+  }
+
+  60%,
+  100% {
+    transform: rotate(90deg)
+  }
+}
+
+/* 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
