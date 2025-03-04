@@ -1,0 +1,21 @@
+{
+    "data": {
+      "transfers": [
+        {
+          "id": "0xabc123-1",
+          "from": "0xAnotherWalletAddress",
+          "to": "0xCoinbaseWalletAddress",
+          "value": "500000000000000000",
+          "timestamp": "1675560000"
+        },
+        {
+          "id": "0xdef456-2",
+          "from": "0xCoinbaseWalletAddress",
+          "to": "0xYetAnotherAddress",
+          "value": "1000000000000000000",
+          "timestamp": "1675550000"
+        }
+      ]
+    }
+  }
+  
