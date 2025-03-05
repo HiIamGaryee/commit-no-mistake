@@ -1,0 +1,36 @@
+{
+    "walletAddress": "0x1234...ABCD",
+    "overallHealthScore": 75,
+    "recentTransactions": [
+      {
+        "hash": "0xabcd1234...",
+        "value": "2.5 ETH",
+        "date": "12/01",
+        "status": "Flagged (High Gas)"
+      },
+      {
+        "hash": "0x9876efgh...",
+        "value": "0.1 ETH",
+        "date": "11/30",
+        "status": "Normal"
+      },
+      {
+        "hash": "0x1234abcd...",
+        "value": "10 ETH",
+        "date": "11/29",
+        "status": "Warning (Large Tx)"
+      }
+    ],
+    "suspiciousFindings": [
+      "Large transaction (10 ETH) to unknown contract",
+      "Unrecognized token (XYZ Token) was transferred"
+    ],
+    "securityTips": [
+      "Consider updating your wallet signature method",
+      "Review contract addresses before approving"
+    ],
+    "aiInsights": [
+      "I notice a high-value transaction to a contract with no prior history. This might be suspicious."
+    ]
+  }
+  
