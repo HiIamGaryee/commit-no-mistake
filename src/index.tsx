@@ -8,7 +8,12 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./style/theme/theme"; // Ensure the correct path
 import GlobalStyles from "./style/GlobalStyles"; // Ensure this file exists
 
-const PRIVY_APP_ID = process.env.REACT_APP_PRIVY_APP_ID; // Ensure ENV variable
+// Ensure the Privy App ID is correctly loaded from environment variables
+const PRIVY_APP_ID = process.env.REACT_APP_PRIVY_APP_ID;
+
+if (!PRIVY_APP_ID) {
+  console.error("❌ PRIVY_APP_ID is missing. Check your .env file.");
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -37,6 +42,9 @@ root.render(
     </PrivyProvider>
   </React.StrictMode>
 );
+
+// ✅ Logs environment setup for debugging
+console.log("✅ PRIVY_APP_ID:", PRIVY_APP_ID ? "Loaded" : "Not Found");
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

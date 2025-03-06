@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { media } from "../../styles/theme/theme";
+import { media } from "../style/theme";
 
 export const DashboardScreenWrap = styled.div`
   overflow-x: hidden;
