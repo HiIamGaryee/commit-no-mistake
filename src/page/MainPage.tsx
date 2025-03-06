@@ -113,53 +113,54 @@ function MainPage() {
   const closeDialog = () => setShowDialog(false);
 
   return (
-    <div className="h-full bg-neutral-950">
-      {/* Navbar */}
-      <div className="bg-opacity-75 bg-neutral-950 fixed top-0 left-0 right-0 py-2 px-4 flex justify-start items-center">
-        <button onClick={openDialog} className="neon-button">
+    <div className="h-full bg-[#0A0F0D] text-[#C2FFB3] flex flex-col items-center justify-center min-h-screen">
+      {/* Page Content */}
+      <div className="text-center px-6">
+        <h1 className="text-6xl font-bold">Wallet Analytics Platform</h1>
+        <p className="text-2xl mt-4">
+          Log in with your wallet to access and visualize your transaction
+          history with detailed graphs.
+        </p>
+
+        {/* Connect Wallet Button - Moved Below the Description */}
+        <button
+          onClick={openDialog}
+          className="mt-6 px-6 py-3 bg-[#39FF14] text-black text-lg font-bold rounded-md hover:bg-[#2FE50E] transition duration-200"
+        >
           Connect Wallet
         </button>
-      </div>
-
-      {/* Page Content */}
-      <div className="bg-home text-white min-h-screen p-4 flex items-center justify-center">
-        <div className="container text-center">
-          <h1 className="text-6xl">Wallet Analytics Platform</h1>
-          <p className="text-2xl mt-2">
-            Log in with your wallet to access and visualize your transaction
-            history with detailed graphs.
-          </p>
-        </div>
       </div>
 
       {/* Dialog for Login Options */}
       {showDialog && (
         <div
-          className="fixed inset-0 bg-neutral-950 bg-opacity-50 flex justify-center items-center"
+          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
           onClick={closeDialog}
         >
           <div
-            className="bg-gray-800 p-4 rounded-lg"
+            className="bg-[#081210] p-6 rounded-lg text-[#C2FFB3] w-[350px] shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-white text-lg mb-4">Connect Wallet Now</h2>
-            <div>
+            <h2 className="text-xl font-semibold mb-4 text-center">
+              Connect Wallet Now
+            </h2>
+            <div className="flex justify-center">
               <img
                 src={walletImg}
                 alt="Wallet"
-                className="full-width-centered-image"
+                className="w-24 h-24 mb-4 object-contain"
               />
             </div>
-            <div className="flex-col gap-4 flex">
+            <div className="flex flex-col gap-4">
               <button
                 onClick={() => handleLogin("privy")}
-                className="neon-button"
+                className="px-4 py-2 bg-[#39FF14] text-black font-semibold rounded-md hover:bg-[#2FE50E] transition duration-200"
               >
                 {authenticated ? "Logout from Privy" : "Login with Privy"}
               </button>
               <button
                 onClick={() => handleLogin("walletconnect")}
-                className="neon-button"
+                className="px-4 py-2 bg-[#39FF14] text-black font-semibold rounded-md hover:bg-[#2FE50E] transition duration-200"
               >
                 {authenticated
                   ? "Logout from WalletConnect"
@@ -167,7 +168,7 @@ function MainPage() {
               </button>
               <button
                 onClick={() => handleLogin("coinbase")}
-                className="neon-button"
+                className="px-4 py-2 bg-[#39FF14] text-black font-semibold rounded-md hover:bg-[#2FE50E] transition duration-200"
               >
                 {authenticated ? "Logout from Coinbase" : "Login with Coinbase"}
               </button>
