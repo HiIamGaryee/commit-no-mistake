@@ -18,24 +18,24 @@ interface ChartProps {
 
 const DashboardChart: React.FC<ChartProps> = ({ type, title }) => {
   return (
-    <div className="p-4 border border-gray-600 rounded-lg bg-gray-800 text-white">
-      <h3 className="text-lg font-semibold mb-3">{title}</h3>
+    <div className="p-4 border border-[#39B8FF] rounded-lg bg-[#0B1437] text-white shadow-lg">
+      <h3 className="text-lg font-semibold mb-3 text-[#39B8FF]">{title}</h3>
       <ResponsiveContainer width="100%" height={250}>
         {type === "line" ? (
           <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" stroke="#ccc" />
-            <YAxis stroke="#ccc" />
-            <Tooltip />
-            <Line type="monotone" dataKey="amount" stroke="#82ca9d" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#A3AED0" />
+            <XAxis dataKey="name" stroke="#A3AED0" />
+            <YAxis stroke="#A3AED0" />
+            <Tooltip contentStyle={{ backgroundColor: "#222", borderColor: "#39B8FF" }} />
+            <Line type="monotone" dataKey="amount" stroke="#39B8FF" strokeWidth={2} dot={{ fill: "#39B8FF", r: 4 }} />
           </LineChart>
         ) : (
-          <BarChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" stroke="#ccc" />
-            <YAxis stroke="#ccc" />
-            <Tooltip />
-            <Bar dataKey="amount" fill="#8884d8" />
+            <BarChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#A3AED0" />
+            <XAxis dataKey="name" stroke="#A3AED0" />
+            <YAxis stroke="#A3AED0" />
+            <Tooltip contentStyle={{ backgroundColor: "#222", borderColor: "#A020F0" }} />
+            <Bar dataKey="amount" fill="#A020F0" />
           </BarChart>
         )}
       </ResponsiveContainer>

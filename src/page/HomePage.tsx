@@ -37,8 +37,8 @@ const MOCK_REPORT = {
 const DashboardScreenWrap = styled.div`
   display: flex;
   min-height: 100vh;
-  background: #0b1437;
-  color: white;
+  background: #0A0F0D;
+  color: #C2FFB3 ;
 
   .dashboard-content {
     flex-grow: 1;
@@ -59,18 +59,19 @@ const DashboardScreenWrap = styled.div`
   }
 
   .card {
-    background: #1b254b;
+    background: #0E1614;
     padding: 16px;
     border-radius: 8px;
     text-align: center;
+    color: #39FF14;
   }
 
   .ai-report {
-    background: #111c44;
+    background: #081210;
     padding: 16px;
     border-radius: 8px;
     text-align: left;
-    color: white;
+    color: #C2FFB3;
   }
 
   .risk-score {
@@ -80,7 +81,7 @@ const DashboardScreenWrap = styled.div`
   .ai-report-title {
     font-size: 18px;
     font-weight: bold;
-    color: #4caf50;
+    color: #39FF14;
   }
 
   .warning-text {
@@ -93,11 +94,11 @@ const DashboardScreenWrap = styled.div`
   }
 
   .security-tips {
-    color: #4caf50;
+    color: #39FF14;
   }
 
   .ai-insights {
-    color: #a3aed0;
+    color: #8FD499;
   }
 `;
 

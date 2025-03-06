@@ -2,22 +2,22 @@ import { css, DefaultTheme, RuleSet } from "styled-components";
 
 export const theme = {
   colors: {
-    spaceCadet1: "#111C44",
-    spaceCadet2: "#1B254B",
-    oxfordBlue: "#0B1437",
-    delftBlue: "#293357",
-    white: "#ffffff",
+    spaceCadet1: "#0A0F0D",
+    spaceCadet2: "#0E1614",
+    oxfordBlue: "#081210",
+    delftBlue: "#133D32",
+    white: "C2FFB3",
     black: "#000000",
-    majorelleBlue: "#7551FF",
-    pictonBlue: "#39B8FF",
-    paleAzure: "#6AD2FF",
-    powderBlue: "#A3AED0",
+    majorelleBlue: "00FF00",
+    pictonBlue: "#39FF14",
+    paleAzure: "#6AFF00",
+    powderBlue: "#A3FFC0",
     success: "#01B574",
     danger: "#EE5D50",
     warning: "#FFCE20",
-    frenchGray: "#C2CBDD",
-    hover: "",
-    active: "",
+    frenchGray: "#8FD499",
+    hover: "#00CC66",
+    active: "#00994D",
   },
   typography: {
     fontFamily: `"DM Sans", sans-serif`,
@@ -35,7 +35,7 @@ export const theme = {
     xxxl: "1600px",
   },
   transitions: {
-    easeInOut: "all 0.3s ease-in-out",
+    easeInOut: "all 0.9s ease-in-out",
   },
 };
 
