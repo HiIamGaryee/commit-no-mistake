@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 import TransactionsPage, { mockData } from "./TransactionsPage";
 import TailwindDialog from "../components/TailwindDialog";
 import AiBot from "../components/AiBots";
-import DashboardChart from "../components/DashboardChart";  // ✅ Fixed import
-import Sidebar from "../components/Sidebar";  // ✅ Fixed import
+import DashboardChart from "../components/DashboardChart";
+import Sidebar from "../components/Sidebar";
 
 const AI_REPORT_API_URL = "http://localhost:5000/generate-report";
 
@@ -38,7 +38,7 @@ const DashboardScreenWrap = styled.div`
   display: flex;
   min-height: 100vh;
   background: #0A0F0D;
-  color: #C2FFB3 ;
+  color: #C2FFB3;
 
   .dashboard-content {
     flex-grow: 1;
@@ -111,7 +111,7 @@ const HomePage: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [reportLoading, setReportLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  const [reportError, setReportError] = useState(false);  // ✅ Fixed missing state
+  const [reportError, setReportError] = useState(false);
 
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
@@ -139,11 +139,11 @@ const HomePage: React.FC = () => {
           setSmartReport(response.data.report);
         } else {
           console.warn("Received unexpected API response:", response.data);
-          setSmartReport(MOCK_REPORT); // Use mock data if API fails
+          setSmartReport(MOCK_REPORT);
         }
       } catch (error) {
         console.error("AI Report API Error:", error);
-        setReportError(true);  // ✅ Fixed incorrect function call
+        setReportError(true);
         setSmartReport(MOCK_REPORT);
       } finally {
         setReportLoading(false);
@@ -192,29 +192,47 @@ const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Dashboard Grid */}
-        <div className="grid-layout mt-6">
-          {/* AI Smart Report */}
-          {isAuthenticated && !reportLoading && (
-            <div className="ai-report">
-              <h3 className="ai-report-title">AI Smart Report</h3>
-              <p className="text-xl">
-                **Overall Health Score:** {smartReport.overallHealthScore} / 100
-              </p>
+        {/* AI Smart Report & Dashboard Chart Side by Side */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          {/* Dashboard Chart */}
+          <DashboardChart type="bar" title="Transaction Overview" />
 
-              <h4 className="warning-text mt-4">Suspicious Findings</h4>
-              <ul>
-                {smartReport.suspiciousFindings.map((finding, index) => (
-                  <li key={index} className={finding.level === "critical" ? "critical-text" : "warning-text"}>
-                    {finding.text}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          {/* AI Smart Report */}
+          <div className="ai-report p-6 rounded-lg shadow-md text-white">
+            <h2 className="text-2xl font-bold mb-3 text-green-400">AI Smart Report</h2>
+            <p className="text-lg font-semibold text-green-300">
+              Overall Health Score: {smartReport.overallHealthScore} / 100
+            </p>
+
+            {/* Suspicious Findings */}
+            <h3 className="text-lg font-bold mt-4 text-yellow-300">Suspicious Findings</h3>
+            <ul className="list-disc ml-5 text-gray-300">
+              {smartReport.suspiciousFindings.map((finding, index) => (
+                <li key={index} className={`${finding.level === "critical" ? "text-red-400 font-bold" : "text-yellow-300"}`}>
+                  {finding.text}
+                </li>
+              ))}
+            </ul>
+
+            {/* Security Tips */}
+            <h3 className="text-lg font-bold mt-4 text-green-300">Security Tips</h3>
+            <ul className="list-disc ml-5 text-green-400">
+              {smartReport.securityTips.map((tip, index) => (
+                <li key={index}>{tip}</li>
+              ))}
+            </ul>
+
+            {/* AI Insights */}
+            <h3 className="text-lg font-bold mt-4 text-blue-300">AI Insights</h3>
+            <ul className="list-disc ml-5 text-blue-400">
+              {smartReport.aiInsights.map((insight, index) => (
+                <li key={index}>{insight}</li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <DashboardChart type="bar" title="Transaction Overview" />  {/* ✅ Fixed missing props */}
+        {/* Transactions Table */}
         <TransactionsPage />
       </div>
     </DashboardScreenWrap>
