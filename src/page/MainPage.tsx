@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "@walletconnect/qrcode-modal";
 import { usePrivy } from "@privy-io/react-auth";
-import walletImg from "../assets/wallet-img.png";
+import walletImg from "../assets/CommitNoMistake.png";
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 
 function MainPage() {
