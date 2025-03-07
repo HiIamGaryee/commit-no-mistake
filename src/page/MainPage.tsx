@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "@walletconnect/qrcode-modal";
 import { usePrivy } from "@privy-io/react-auth";
-import walletImg from "../assets/CommitNoMistake.png";
+import walletImg from "../assets/CommitNoMistake.png";  // ✅ Ensure this path is correct
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 
 function MainPage() {
@@ -113,19 +113,19 @@ function MainPage() {
   const closeDialog = () => setShowDialog(false);
 
   return (
-      <div
+    <div
       className="h-full bg-[#0A0F0D] text-[#C2FFB3] flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('/CTCLandingPage.png')" }}>
-
+      style={{ backgroundImage: "url('/CTCLandingPage.png')" }}
+    >
       {/* Page Content */}
       <div className="absolute top-1/3 left-16 text-left w-1/2">
-  <h1 className="text-7xl font-bold text-white">
-    Wallet Analytics Platform
-  </h1>
-  <p className="text-2xl text-white mt-4">
-  Log in with your wallet to access and visualize your transaction
-  history with detailed graphs.
-</p>
+        <h1 className="text-7xl font-bold text-white">
+          Wallet Analytics Platform
+        </h1>
+        <p className="text-2xl text-white mt-4">
+          Log in with your wallet to access and visualize your transaction
+          history with detailed graphs.
+        </p>
 
         {/* Connect Wallet Button - Moved Below the Description */}
         <button
@@ -154,6 +154,9 @@ function MainPage() {
                 src={walletImg}
                 alt="Wallet"
                 className="w-24 h-24 mb-4 object-contain"
+                onError={(e) => {
+                  e.currentTarget.src = "/assets/CommitNoMistake.png"; // ✅ Fallback image
+                }}
               />
             </div>
             <div className="flex flex-col gap-4">
