@@ -113,10 +113,9 @@ function MainPage() {
   const closeDialog = () => setShowDialog(false);
 
   return (
-    <div
-  className="h-full bg-[#0A0F0D] text-[#C2FFB3] flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
-  style={{ backgroundImage: "url('/CTCLandingPage.png')" }}
-  >
+      <div
+      className="h-full bg-[#0A0F0D] text-[#C2FFB3] flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url('/CTCLandingPage.png')" }}>
 
       {/* Page Content */}
       <div className="absolute top-1/3 left-16 text-left w-1/2">
