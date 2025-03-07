@@ -113,14 +113,20 @@ function MainPage() {
   const closeDialog = () => setShowDialog(false);
 
   return (
-    <div className="h-full bg-[#0A0F0D] text-[#C2FFB3] flex flex-col items-center justify-center min-h-screen">
+    <div
+  className="h-full bg-[#0A0F0D] text-[#C2FFB3] flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
+  style={{ backgroundImage: "url('/CTCLandingPage.png')" }}
+  >
+
       {/* Page Content */}
-      <div className="text-center px-6">
-        <h1 className="text-6xl font-bold">Wallet Analytics Platform</h1>
-        <p className="text-2xl mt-4">
-          Log in with your wallet to access and visualize your transaction
-          history with detailed graphs.
-        </p>
+      <div className="absolute top-1/3 left-16 text-left w-1/2">
+  <h1 className="text-7xl font-bold text-white">
+    Wallet Analytics Platform
+  </h1>
+  <p className="text-2xl text-white mt-4">
+  Log in with your wallet to access and visualize your transaction
+  history with detailed graphs.
+</p>
 
         {/* Connect Wallet Button - Moved Below the Description */}
         <button
