@@ -1,6 +1,10 @@
-🔗 [SUBGRAPH](https://github.com/HiIamGaryee/commit-no-mistake-graph)  
-🔗 [Live Demo](https://commit-no-mistake.vercel.app)
-🔗 Contract: 0x20cf02fc3ebf01189b9dc384db5927f7b4e70b6a
+🔗 [SUBGRAPH](https://github.com/HiIamGaryee/commit-no-mistake-graph)
+
+🔗 [SUBGRAPH](https://thegraph.com/studio/subgraph/commitnomistake/) https://thegraph.com/studio/subgraph/commitnomistake/
+
+🔗 [Live Demo](https://commit-no-mistake.vercel.app) https://commit-no-mistake.vercel.app
+
+🔗 [Contract:](https://sepolia.scrollscan.com/address/0x20cf02fc3ebf01189b9dc384db5927f7b4e70b6a) 0x20cf02fc3ebf01189b9dc384db5927f7b4e70b6a
 
 # Getting Started with Create React App
 
