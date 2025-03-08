@@ -1,0 +1,5 @@
+- Got Staking Ui , but still not working , wallet aaddress get wrong need fix
+- fail to get data from the get wallet balance 
+- ai report havent link to the data , now using mock data 
+- ai bot need check
+- add a dark mode light mode 
